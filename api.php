@@ -1,15 +1,10 @@
 <?php
 	require_once('assets/includes/sonicflow.php');
 
-	$action = $_POST["action"];
-	$search = $_POST["query"];
-	$id = $_POST["id"];
+	$action = (isset($_POST["action"]) ? $_POST["action"] : "none");
+	$search = (isset($_POST["query"]) ? $_POST["query"] : null);
+	$id = (isset($_POST["id"]) ? $_POST["id"] : null);
 	$channel = "Headphone";
-
-	if (is_null($action)) {
-		$action="none";
-	}
-
 
 	$result = "{\"action\":\"".$action."\",\"result\":{";
 
